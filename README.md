@@ -1,1 +1,1 @@
-VitaForYou
+VitaForYou Project
