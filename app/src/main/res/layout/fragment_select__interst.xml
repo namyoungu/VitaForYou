@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:text="제품 목록"
+        android:textColor="@color/colorMain"
+        android:textSize="45dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray"
+        android:gravity="center"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:text="증상이나 관심분야를 선택하시면\n 영양제를 보여드려요! \n 아래에서 선택해 주세요"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    //관심 부분별
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:scrollbars="horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/colorMain"
+                android:layout_marginLeft="10dp"
+                android:textSize="15dp"
+                android:text=" 관심 부분별 "
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:background="#534D4D"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ListView
+                android:id="@+id/list_interest1"
+                android:layout_weight="1"
+                android:scrollbars="none"
+                android:layout_width="match_parent"
+                android:layout_height="150dp" />
+            <ListView
+                android:id="@+id/list_interest2"
+                android:layout_weight="1"
+                android:scrollbars="none"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <ListView
+                android:id="@+id/list_interest3"
+                android:layout_weight="1"
+                android:scrollbars="none"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <ListView
+                android:id="@+id/list_interest4"
+                android:layout_weight="1"
+                android:scrollbars="none"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    //대상별
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/colorMain"
+                android:layout_marginLeft="10dp"
+                android:textSize="15dp"
+                android:text=" 대상별 "
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:background="#534D4D"/>
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ListView
+                android:id="@+id/list_target1"
+                android:layout_weight="1"
+                android:scrollbars="none"
+                android:layout_width="match_parent"
+                android:layout_height="150dp" />
+            <ListView
+                android:id="@+id/list_target2"
+                android:layout_weight="1"
+                android:scrollbars="none"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    // 성분 종류별
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/colorMain"
+                android:layout_marginLeft="10dp"
+                android:textSize="15dp"
+                android:text=" 성분 종류별 "
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:background="#534D4D"/>
+
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/list_component"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</LinearLayout>

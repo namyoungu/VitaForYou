@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LoginActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="110dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/main_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:text=" 회원가입 "
+            android:textColor="@color/colorMain"
+            android:textSize="45dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+
+    //userId
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="38dp"
+            android:layout_height="35dp"
+            android:src="@drawable/ic_looks_one_black_24dp" />
+
+        <EditText
+            android:id="@+id/et_id"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="UserID" />
+
+    </LinearLayout>
+
+
+    //userPass
+
+
+    <Button
+        android:id="@+id/btn_overlap"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:layout_gravity="right"
+        android:layout_marginRight="140dp"
+        android:background="@color/colorMain"
+        android:text="ID중복확인"
+        android:textColor="#ffffff"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="38dp"
+            android:layout_height="35dp"
+            android:src="@drawable/ic_looks_two_black_24dp" />
+
+        <EditText
+            android:id="@+id/et_pass"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="Password" />
+    </LinearLayout>
+
+    //userName
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="38dp"
+            android:layout_height="35dp"
+            android:src="@drawable/ic_looks_3_black_24dp" />
+
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="UserName" />
+    </LinearLayout>
+
+    //userGender
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="38dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="63dp"
+                android:layout_marginRight="80dp"
+                android:src="@drawable/ic_looks_4_black_24dp" />
+
+            <RadioGroup
+                android:id="@+id/rag_gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/ra_female"
+                    android:text="여"
+                    android:checked="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <RadioButton
+                    android:id="@+id/ra_male"
+                    android:text="남"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    //userPhone
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="38dp"
+            android:layout_height="35dp"
+            android:src="@drawable/ic_looks_5_black_24dp" />
+
+        <EditText
+            android:id="@+id/et_phone"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="Phone" />
+    </LinearLayout>
+
+    //userEmail
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="38dp"
+            android:layout_height="35dp"
+            android:src="@drawable/ic_looks_6_black_24dp" />
+
+        <EditText
+            android:id="@+id/et_email"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="Email" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="25dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="25dp"
+            android:textStyle="bold"
+            android:text="취소" />
+
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorMain"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:text="회원가입" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
