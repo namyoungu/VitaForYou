@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    // 홈
+    <item
+        android:id="@+id/bottom_home"
+        android:icon="@drawable/home_icon"
+        android:title="홈"
+        app:showAsAction="ifRoom"/>
+
+    // 내 식단
+    <item
+        android:id="@+id/bottom_diet"
+        android:icon="@drawable/my_profile_diet"
+        android:title="내 식단"
+        app:showAsAction="ifRoom"/>
+
+
+    // 내 거래
+    <item
+        android:id="@+id/bottom_deal"
+        android:icon="@drawable/my_profile_deal"
+        android:title="내 거래"
+        app:showAsAction="ifRoom"/>
+
+
+    // 내 정보
+    <item
+        android:id="@+id/bottom_profile"
+        android:icon="@drawable/person_icon"
+        android:title="내 정보"
+        app:showAsAction="ifRoom"/>
+
+
+    // 설정
+    <item
+        android:id="@+id/bottom_setting"
+        android:icon="@drawable/bottom_setting2"
+        android:title="설정"
+        app:showAsAction="ifRoom"/>
+
+</menu>
