@@ -21,18 +21,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<< Updated upstream
-        <activity android:name=".MainActivity" />
-        <activity android:name=".LoginActivity"/>
-        <activity android:name=".RegisterActivity"/>
-=======
 
         <activity android:name=".MainActivity" />
         <activity android:name=".LoginActivity"/>
         <activity android:name=".RegisterActivity"/>
         <activity android:name=".AlarmListActivity"/>
         <activity android:name=".AlarmActivity" />
->>>>>>> Stashed changes
+
     </application>
 
 </manifest>
