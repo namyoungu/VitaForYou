@@ -49,10 +49,7 @@ dependencies {
     //noinspection GradleCompatible
     implementation 'com.android.support:design:23.2.1'
 
-<<<<<<< Updated upstream
-=======
     implementation 'com.prolificinteractive:material-calendarview:1.4.3'
     implementation 'com.github.applikeysolutions:cosmocalendar:1.0.4'
 
->>>>>>> Stashed changes
 }
