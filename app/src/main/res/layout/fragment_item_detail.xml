@@ -12,13 +12,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorMain"
-<<<<<<< Updated upstream
-        app:title="Vita For You"
-=======
         android:textAlignment="center"
         app:title="제품 상세 설명"
->>>>>>> Stashed changes
-        app:titleTextColor="#fff"></androidx.appcompat.widget.Toolbar>
+        app:titleTextColor="#fff"/>
 
     <WebView
         android:id="@+id/webview_item_detail"

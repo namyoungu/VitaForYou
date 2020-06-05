@@ -11,21 +11,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
-<<<<<<< Updated upstream
-=======
 import java.util.Vector;
 
->>>>>>> Stashed changes
 public class ItemDetail extends Fragment{
 
     WebView webview_item_detail;
     String pid;
     String url;
     String postData;
-<<<<<<< Updated upstream
-=======
     String userID;
->>>>>>> Stashed changes
     Bundle itemDetailBundle;
 
     @Override
@@ -36,12 +30,9 @@ public class ItemDetail extends Fragment{
 
         if(itemDetailBundle != null) {
             pid = itemDetailBundle.getString("splpCode");
-<<<<<<< Updated upstream
             postData = "pid="+pid;
-=======
             userID = itemDetailBundle.getString("userID");
             postData = "pid="+pid +"&userID="+userID;
->>>>>>> Stashed changes
             System.out.println("postData는 ..? " + postData);
         }
     }
@@ -67,10 +58,6 @@ public class ItemDetail extends Fragment{
         webview_item_detail = (WebView)itemDetailView.findViewById(R.id.webview_item_detail);
         webview_item_detail.getSettings().setJavaScriptEnabled(true);
 
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
         System.out.println("postData는 ? :"+postData);
 
         url="http://limiteknj.iptime.org/Board/spl_detail/";

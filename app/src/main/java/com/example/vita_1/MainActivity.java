@@ -363,9 +363,6 @@ public class MainActivity extends AppCompatActivity {
                 ft.commit();
                 break;
 
-        }
-    }
-
             case 40:
                 ft.replace(R.id.Main_Frame,addFood);
                 ft.addToBackStack(null);
@@ -375,6 +372,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
+
     //해당 날짜 선택
     public void setDate(String date) {
         this.date = date;
@@ -400,7 +398,6 @@ public class MainActivity extends AppCompatActivity {
             }
             else{
                 super.onBackPressed();
-            }
         }
     }
 
