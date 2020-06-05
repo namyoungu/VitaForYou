@@ -8,19 +8,33 @@ import androidx.fragment.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+<<<<<<< Updated upstream
+=======
+import android.util.Log;
+>>>>>>> Stashed changes
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
+<<<<<<< Updated upstream
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.bottomnavigation.BottomNavigationItemView;
+=======
+
+import com.example.vita_1.item.FoodData;
+>>>>>>> Stashed changes
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+<<<<<<< Updated upstream
+=======
+import java.util.Calendar;
+
+>>>>>>> Stashed changes
 public class MainActivity extends AppCompatActivity {
 
     public static Context mContext;
@@ -32,6 +46,16 @@ public class MainActivity extends AppCompatActivity {
     private Select_Interst selectInterstFrag;
     private SplList splListFrag;
     private ItemDetail itemDetailFrag ;
+<<<<<<< Updated upstream
+=======
+
+
+    private Mydiet mydiet;
+
+    private AddFood addFood;
+
+    private CalenderFragment calenderFragment;
+>>>>>>> Stashed changes
     public Bundle bundle1 =  new Bundle();
     public Bundle splListbundle =  new Bundle();
     public Bundle itemDetailBundle = new Bundle();
@@ -40,6 +64,13 @@ public class MainActivity extends AppCompatActivity {
     public String userGender;
     public String userEMail;
     public String splpCode;
+<<<<<<< Updated upstream
+=======
+    //해당날짜 저장
+    public String date;
+    public Bundle dateBundle =  new Bundle();
+    private int type;
+>>>>>>> Stashed changes
 
 
     @Override
@@ -62,6 +93,14 @@ public class MainActivity extends AppCompatActivity {
         splListFrag = new SplList();
         itemDetailFrag = new ItemDetail();
 
+<<<<<<< Updated upstream
+=======
+        mydiet = new Mydiet();
+        addFood =new AddFood();
+
+        calenderFragment = new CalenderFragment();
+
+>>>>>>> Stashed changes
         setFrag(0);
 
 
@@ -84,9 +123,12 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+<<<<<<< Updated upstream
 
 
         
+=======
+>>>>>>> Stashed changes
     }
 
 
@@ -95,6 +137,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void setFrag(int n)
     {
+<<<<<<< Updated upstream
+=======
+        Log.e("setFrag",n+"");
+>>>>>>> Stashed changes
         fm = getSupportFragmentManager();
         ft= fm.beginTransaction();
 
@@ -116,6 +162,29 @@ public class MainActivity extends AppCompatActivity {
                 ft.replace(R.id.Main_Frame,profileFrag);
                 ft.commit();
                 break;
+<<<<<<< Updated upstream
+=======
+            // 내 식단 클릭시
+            case 2:
+                ft.replace(R.id.Main_Frame,calenderFragment);
+                ft.addToBackStack(null);
+                ft.commit();
+                break;
+
+            case 39:
+                //달력 프레그먼트 제거
+                getSupportFragmentManager().popBackStack();
+                dateBundle.putString("date",date);
+                dateBundle.putString("userID",userID);
+                mydiet.setArguments(dateBundle);
+                mydiet.initList();
+                ft.replace(R.id.Main_Frame,mydiet);
+
+                ft.addToBackStack(null);
+                ft.commit();
+
+                break;
+>>>>>>> Stashed changes
 
             // 제품 추천 클릭시
             case 4:
@@ -127,6 +196,10 @@ public class MainActivity extends AppCompatActivity {
                 // 제품 상세 화면
             case 10:
                 itemDetailBundle.putString("splpCode",splpCode);
+<<<<<<< Updated upstream
+=======
+                itemDetailBundle.putString("userID",userID);
+>>>>>>> Stashed changes
                 itemDetailFrag.setArguments(itemDetailBundle);
                 ft.replace(R.id.Main_Frame,itemDetailFrag);
                 ft.addToBackStack(null);
@@ -316,11 +389,27 @@ public class MainActivity extends AppCompatActivity {
                 ft.addToBackStack(null);
                 ft.commit();
                 break;
+<<<<<<< Updated upstream
 
         }
     }
 
 
+=======
+            case 40:
+                ft.replace(R.id.Main_Frame,addFood);
+                ft.addToBackStack(null);
+                ft.commit();
+                break;
+
+
+        }
+    }
+    //해당 날짜 선택
+    public void setDate(String date) {
+        this.date = date;
+    }
+>>>>>>> Stashed changes
 
     // 상단 툴바 뒤로가기 눌렀을 시 이벤트
    @Override
@@ -336,11 +425,28 @@ public class MainActivity extends AppCompatActivity {
 
     public void onBackPressed(){
             if(getFragmentManager().getBackStackEntryCount() > 0){
+<<<<<<< Updated upstream
                 getFragmentManager().popBackStack();
+=======
+                getSupportFragmentManager().popBackStack();
+>>>>>>> Stashed changes
             }
             else{
                 super.onBackPressed();
             }
         }
+<<<<<<< Updated upstream
     }
+=======
+    //아침점심저녁 데이터선택
+    public void setType(int type) {
+        this.type =type;
+    }
+    //음식선택
+    public void setFoodData(FoodData foodData) {
+        getSupportFragmentManager().popBackStack();
+        mydiet.addData(type,foodData.getFoodID(),foodData.getFoodName());
+    }
+}
+>>>>>>> Stashed changes
 

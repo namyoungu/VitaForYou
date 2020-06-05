@@ -51,7 +51,13 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:gravity="center"
+<<<<<<< Updated upstream
             android:hint="UserID" />
+=======
+            android:singleLine="true"
+            android:hint="UserID"
+            android:text="2222" />
+>>>>>>> Stashed changes
 
     </LinearLayout>
 
@@ -70,9 +76,17 @@
             android:id="@+id/et_pass"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
+<<<<<<< Updated upstream
             android:inputType="textPassword"
             android:gravity="center"
             android:hint="Password" />
+=======
+            android:singleLine="true"
+            android:gravity="center"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:text="2222" />
+>>>>>>> Stashed changes
 
     </LinearLayout>
 

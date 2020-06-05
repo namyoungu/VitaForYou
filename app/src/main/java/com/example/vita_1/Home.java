@@ -15,6 +15,10 @@ public class Home extends Fragment {
 
     ImageView profile_image;
     ImageView select_interest_image;
+<<<<<<< Updated upstream
+=======
+    ImageView my_diet_view;
+>>>>>>> Stashed changes
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -30,6 +34,12 @@ public class Home extends Fragment {
         // 관심분야나 증상 선택(제품 추천 ) 이미지 받아오기
         select_interest_image = (ImageView) HomeView.findViewById(R.id.select_interest_view);
 
+<<<<<<< Updated upstream
+=======
+        my_diet_view = HomeView.findViewById(R.id.my_diet_view);
+
+
+>>>>>>> Stashed changes
 
         // 내 정보 클릭시
         profile_image.setOnClickListener(new View.OnClickListener() {
@@ -47,6 +57,16 @@ public class Home extends Fragment {
             }
         });
 
+<<<<<<< Updated upstream
+=======
+        my_diet_view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((MainActivity)getActivity()).setFrag(2);
+            }
+        });
+
+>>>>>>> Stashed changes
         return HomeView;
 
     }
