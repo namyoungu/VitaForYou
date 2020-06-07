@@ -16,6 +16,9 @@ public class Home extends Fragment {
     ImageView profile_image;
     ImageView select_interest_image;
     ImageView my_diet_view;
+    ImageView board_image;
+    ImageView doctor_image;
+    ImageView setting_image;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -31,13 +34,38 @@ public class Home extends Fragment {
         // 관심분야나 증상 선택(제품 추천 ) 이미지 받아오기
         select_interest_image = (ImageView) HomeView.findViewById(R.id.select_interest_view);
 
+        //내 식단
         my_diet_view = HomeView.findViewById(R.id.my_diet_view);
+
+        // 거래 이미지 받아오기
+        board_image = (ImageView) HomeView.findViewById(R.id.my_deal_view);
+
+        doctor_image = (ImageView) HomeView.findViewById(R.id.doctor);
+
+        setting_image = (ImageView) HomeView.findViewById(R.id.setting_view);
+
 
         // 내 정보 클릭시
         profile_image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ((MainActivity)getActivity()).setFrag(1);
+            }
+        });
+
+        // 내 식단 클릭시
+        my_diet_view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((MainActivity)getActivity()).setFrag(2);
+            }
+        });
+
+        //거래 클릭시
+        board_image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity)getActivity()).setFrag(3);
             }
         });
 
@@ -49,12 +77,24 @@ public class Home extends Fragment {
             }
         });
 
-        my_diet_view.setOnClickListener(new View.OnClickListener() {
+        //문진 클릭시
+        doctor_image.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                ((MainActivity)getActivity()).setFrag(2);
+            public void onClick(View v) {
+                ((MainActivity)getActivity()).setFrag(5);
             }
         });
+
+        setting_image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity)getActivity()).setFrag(6);
+            }
+        });
+
+
+
+
 
         return HomeView;
 

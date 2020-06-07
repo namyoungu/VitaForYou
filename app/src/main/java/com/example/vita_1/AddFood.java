@@ -1,5 +1,6 @@
 package com.example.vita_1;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -13,6 +14,7 @@ import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -39,6 +41,7 @@ public class AddFood extends Fragment{
     RecyclerView recycler;
     LinearLayoutManager mLayoutManager;
     FoodAdapter mAdapter;
+    MainActivity mainActivity;
 
     ArrayList<FoodData> alFood = new ArrayList<>();
     ArrayList<FoodData> items = new ArrayList<>();
@@ -47,7 +50,21 @@ public class AddFood extends Fragment{
 
         View view = inflater.inflate(R.layout.fragment_addfood, container, false);
 
+        // 툴바 셋팅
+        mainActivity = (MainActivity)getActivity();
+        Toolbar toolbar = (Toolbar)view.findViewById(R.id.toolbar);
+
+
+        // 툴바 세부사항 셋팅
+        toolbar.setTitleTextColor(Color.WHITE);
+        toolbar.setTitleMarginStart(300);
+
+
+        mainActivity.setSupportActionBar(toolbar);
+        mainActivity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         et_filter = view.findViewById(R.id.et_filter);
+        et_filter.setHint("검색할 음식을 입력하세요");
         et_filter.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {

@@ -7,17 +7,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorMain"
-        android:textAlignment="center"
-        app:title="제품 상세 설명"
-        app:titleTextColor="#fff"></androidx.appcompat.widget.Toolbar>
-
     <WebView
-        android:id="@+id/webview_item_detail"
+        android:id="@+id/webview_board"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center" />

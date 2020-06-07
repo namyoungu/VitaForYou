@@ -7,18 +7,17 @@ import com.android.volley.toolbox.StringRequest;
 import java.util.HashMap;
 import java.util.Map;
 
-public class DietRequest extends StringRequest {
-
+public class FoodNutRequest extends StringRequest {
     //서버 URL 설정(php 파일 연동)
-    final static private String URL = "http://limiteknj.iptime.org/Board/diet.php";
+    final static private String URL = "http://limiteknj.iptime.org/Board/FoodNutRequest.php";
     private Map<String, String> map;
 
-    public DietRequest(String userID,String date1, Response.Listener<String> listener) {
+    public FoodNutRequest(String wheneat, String foodID, Response.Listener<String> listener) {
         super(Method.POST, URL, listener, null);
 
         map = new HashMap<>();
-        map.put("userID", userID);
-        map.put("date1", date1);
+        map.put("wheneat", wheneat);
+        map.put("foodID", foodID);
     }
 
     @Override

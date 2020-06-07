@@ -60,7 +60,7 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodViewHolder> {
     public void onBindViewHolder(FoodViewHolder holder, int position) {
         FoodData data = Datas.get(position);
 
-        holder.tv_id.setText(""+data.getFoodID());
+        //holder.tv_id.setText(""+data.getFoodID());
         holder.tv_name.setText(""+data.getFoodName());
 
 

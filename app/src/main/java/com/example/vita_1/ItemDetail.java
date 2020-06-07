@@ -3,6 +3,8 @@ package com.example.vita_1;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,11 +32,13 @@ public class ItemDetail extends Fragment{
 
         if(itemDetailBundle != null) {
             pid = itemDetailBundle.getString("splpCode");
-            postData = "pid="+pid;
             userID = itemDetailBundle.getString("userID");
             postData = "pid="+pid +"&userID="+userID;
             System.out.println("postData는 ..? " + postData);
         }
+
+
+
     }
 
     @Override
@@ -64,6 +68,34 @@ public class ItemDetail extends Fragment{
         webview_item_detail.setWebViewClient(new WebViewClientClass());
         webview_item_detail.postUrl(url,postData.getBytes());
 
+        webview_item_detail.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+
+                //This is the filter
+                if (event.getAction()!=KeyEvent.ACTION_DOWN)
+                    return true;
+
+
+                if (keyCode == KeyEvent.KEYCODE_BACK) {
+                    if (webview_item_detail.canGoBack()) {
+                        webview_item_detail.goBack();
+                        System.out.println("canGoBack");
+                    } else {
+                        System.out.println("canNotGoBack");
+                        ((MainActivity)getActivity()).onBackPressed();
+                    }
+
+                    return true;
+                }
+
+                return false;
+            }
+        });
+
         return itemDetailView;
     }
+
+
+
 }

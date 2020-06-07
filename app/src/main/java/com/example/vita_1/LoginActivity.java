@@ -67,6 +67,7 @@ public class LoginActivity extends AppCompatActivity {
                                 String userName=jsonObject.getString("userName");
                                 String userGender=jsonObject.getString("userGender");
                                 String userEMail=jsonObject.getString("userEMail");
+                                String userPhone =jsonObject.getString("userPhone");
 
 
                                 Toast.makeText(getApplicationContext(), "환영합니다", Toast.LENGTH_SHORT).show();
@@ -76,6 +77,7 @@ public class LoginActivity extends AppCompatActivity {
                                 intent.putExtra("userName",userName);
                                 intent.putExtra("userGender",userGender);
                                 intent.putExtra("userEMail",userEMail);
+                                intent.putExtra("userPhone",userPhone);
                                 startActivity(intent);
                             }
                             else

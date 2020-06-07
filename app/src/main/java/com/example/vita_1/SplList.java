@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
+import android.widget.TextView;
 
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
@@ -57,12 +58,20 @@ public class SplList extends Fragment{
 
         // 툴바 세부사항 셋팅
         toolbar.setTitleTextColor(Color.WHITE);
-        toolbar.setTitle(title);
-        toolbar.setTitleMarginStart(330);
+        //toolbar.setTitle(title);
+        //toolbar.setTitleMarginStart(330);
 
 
         mainActivity.setSupportActionBar(toolbar);
         mainActivity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        TextView top = (TextView)splListView.findViewById(R.id.textView10);
+        top.setText(title);
+
+
+        mainActivity.setSupportActionBar(toolbar);
+        mainActivity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        mainActivity.getSupportActionBar().setDisplayShowTitleEnabled(false);
 
 
 

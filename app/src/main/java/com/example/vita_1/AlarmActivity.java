@@ -108,7 +108,6 @@ public class AlarmActivity extends AppCompatActivity {
                 TimePickerDialog dlg_timePicker =
                     new TimePickerDialog(AlarmActivity.this, timelistener, hour, min, false);
                 dlg_timePicker.show();
-                timeCase = 0;
             }
         });
 
@@ -124,7 +123,6 @@ public class AlarmActivity extends AppCompatActivity {
                 TimePickerDialog dlg_timePicker =
                         new TimePickerDialog(AlarmActivity.this, timelistener, hour, min, false);
                 dlg_timePicker.show();
-                timeCase = 0;
             }
         });
 
@@ -140,7 +138,6 @@ public class AlarmActivity extends AppCompatActivity {
                 TimePickerDialog dlg_timePicker =
                         new TimePickerDialog(AlarmActivity.this, timelistener, hour, min, false);
                 dlg_timePicker.show();
-                timeCase = 0;
             }
         });
 
@@ -198,7 +195,7 @@ public class AlarmActivity extends AppCompatActivity {
                 st_dnrHour = String.valueOf(dnrHour);
                 st_dnrMin = String.valueOf(dnrMin);
 
-                Response.Listener<String> responseListener = new Response.Listener<String>() {
+                Response.Listener<String> responseSetListener = new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         try {
@@ -220,7 +217,7 @@ public class AlarmActivity extends AppCompatActivity {
                 };
 
                 AlarmInsertRequest alarmInsertRequest = new AlarmInsertRequest(userID, alarmName,
-                        st_mornHour, st_mornMin, st_lunHour, st_lunMin, st_dnrHour, st_dnrMin, responseListener);
+                        st_mornHour, st_mornMin, st_lunHour, st_lunMin, st_dnrHour, st_dnrMin, responseSetListener);
                 RequestQueue queue = Volley.newRequestQueue(AlarmActivity.this);
                 queue.add(alarmInsertRequest);
             }
@@ -241,7 +238,7 @@ public class AlarmActivity extends AppCompatActivity {
         builder.setPositiveButton("예", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                Response.Listener<String> responseListener = new Response.Listener<String>() {
+                Response.Listener<String> responseDelListener = new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         try {
@@ -261,7 +258,7 @@ public class AlarmActivity extends AppCompatActivity {
                     }
                 };
 
-                AlarmDeleteRequest alarmDeleteRequest = new AlarmDeleteRequest(userID, alarmName, responseListener);
+                AlarmDeleteRequest alarmDeleteRequest = new AlarmDeleteRequest(userID, alarmName, responseDelListener);
                 RequestQueue queue = Volley.newRequestQueue(AlarmActivity.this);
                 queue.add(alarmDeleteRequest);
             }
@@ -306,6 +303,8 @@ public class AlarmActivity extends AppCompatActivity {
                     break;
                 }
             }
+
+            timeCase = 0;
         }
     };
 }

@@ -172,7 +172,7 @@
     </LinearLayout>
 
 
-    //3번째 줄 (관심제품, 설정 )
+    //3번째 줄 (문진, 설정 )
 
     <LinearLayout
         android:id="@+id/third_layout"
@@ -190,18 +190,18 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/interest_view"
+                android:id="@+id/doctor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:src="@drawable/interest_icon" />
+                android:src="@drawable/chat" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:text="관심제품"
+                android:text="진단"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 

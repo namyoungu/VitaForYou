@@ -17,20 +17,71 @@
     tools:layout_editor_absoluteX="1dp"
     tools:layout_editor_absoluteY="1dp">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:gravity="left"
-            app:srcCompat="@drawable/image09" />
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorMain"
+        app:titleTextColor="#fff">
 
         <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="20sp"
+            android:textColor="#fff"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:text="오늘의 상태"
+        android:textColor="@color/colorMain"
+        android:textSize="45dp"
+        android:textStyle="bold" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:scrollbars="horizontal"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/text"
+            android:text="내 상태"
+            android:textSize="30dp"
+            android:background="@drawable/round_shape"
+            android:textColor="#ffffff"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:gravity="left" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:background="@color/gray"/>
+
+    </LinearLayout>
+
+
+
+    <TextView
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.1" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="90dp"
@@ -38,7 +89,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/textView24"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.1" />
@@ -62,6 +113,13 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     app:srcCompat="@drawable/image06" />
+
+                <ImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/whateat" />
 
             </LinearLayout>
 
@@ -141,87 +199,264 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="2" />
                 </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/textView11"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5" />
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="고르기4" />
+
+                    <Spinner
+                        android:id="@+id/spinner4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/textView13"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2" />
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
 
 
-        <View
-            android:background="#999999"
-            android:layout_width="match_parent"
-            android:layout_height="2px"
-            android:layout_marginTop="50dp"
-            />
+    <View
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_height="2dp"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:background="@color/gray"/>
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="오늘의 식단"
+        android:textColor="@color/colorMain"
+        android:textSize="45dp"
+        android:textStyle="bold" />
+
+
+    //아침
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:scrollbars="horizontal"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/morning_text"
+        android:text="아침"
+        android:textSize="30dp"
+        android:background="@drawable/round_shape"
+        android:textColor="#ffffff"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:gravity="left" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:background="@color/gray"/>
+
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:scrollbars="horizontal"
+        android:orientation="horizontal">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler1"
+            android:layout_width="280dp"
+            android:layout_height="100dp" />
+
+        <ImageView
+            android:id="@+id/imageButton1"
+            android:layout_width="127dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:gravity="right"
+            app:srcCompat="@drawable/plus_bttn" />
+
+
+    </LinearLayout>
+
+
+    //점심
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:scrollbars="horizontal"
+        android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/lunch_text"
+            android:text="점심"
+            android:textSize="30dp"
+            android:background="@drawable/round_shape"
+            android:textColor="#ffffff"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:gravity="left" />
+
+        <View
             android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center"
-            android:textSize="40sp"
-            android:textColor="#6699CC"
-            android:layout_marginBottom="50dp"
-            android:text="오늘의 식단" />
+            android:layout_height="2dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:background="@color/gray"/>
 
-    <ImageView
-        android:id="@+id/imageView2"
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/image10" />
+        android:layout_marginTop="10dp"
+        android:scrollbars="horizontal"
+        android:orientation="horizontal">
 
-    <ImageButton
-        android:id="@+id/imageButton1"
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler2"
+            android:layout_width="280dp"
+            android:layout_height="100dp" />
+
+        <ImageView
+            android:id="@+id/imageButton2"
+            android:layout_width="127dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:gravity="right"
+            app:srcCompat="@drawable/plus_bttn" />
+
+
+    </LinearLayout>
+
+
+    //저녁
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_add_black_24dp" />
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler1"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        />
+        android:layout_marginTop="10dp"
+        android:scrollbars="horizontal"
+        android:orientation="horizontal">
 
-    <ImageView
-        android:id="@+id/imageView3"
+        <TextView
+            android:id="@+id/evening_text"
+            android:text="저녁"
+            android:textSize="30dp"
+            android:background="@drawable/round_shape"
+            android:textColor="#ffffff"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:gravity="left" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:background="@color/gray"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/image12" />
-    <ImageButton
-        android:id="@+id/imageButton2"
+        android:layout_marginTop="10dp"
+        android:scrollbars="horizontal"
+        android:orientation="horizontal">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler3"
+            android:layout_width="280dp"
+            android:layout_height="100dp" />
+
+        <ImageView
+            android:id="@+id/imageButton3"
+            android:layout_width="127dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:gravity="right"
+            app:srcCompat="@drawable/plus_bttn" />
+
+
+    </LinearLayout>
+
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorMain"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:padding="20dp"
+        android:text=" Vita For You가 추천하는 \n 영양제 조합을 확인하세요!"
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
-        app:srcCompat="@drawable/ic_add_black_24dp" />
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler2"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/image11" />
-    <ImageButton
-        android:id="@+id/imageButton3"
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="1">
 
-        app:srcCompat="@drawable/ic_add_black_24dp" />
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler3"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        />
+        <ImageButton
+            android:id="@+id/imageButton4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            app:srcCompat="@drawable/save_diet" />
 
-    <ImageButton
-        android:id="@+id/imageButton4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#FFFFFF"
-        app:srcCompat="@drawable/image13" />
-
-
+        <ImageButton
+            android:id="@+id/imageButton5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            app:srcCompat="@drawable/recommand" />
+        </LinearLayout>
 
 </LinearLayout>
 </ScrollView>

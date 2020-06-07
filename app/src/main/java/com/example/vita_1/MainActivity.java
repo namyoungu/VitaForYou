@@ -2,22 +2,18 @@ package com.example.vita_1;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.toolbox.Volley;
-import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 
 import com.example.vita_1.item.FoodData;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -30,22 +26,24 @@ import java.util.Calendar;
 public class MainActivity extends AppCompatActivity {
 
     public static Context mContext;
-    private BottomNavigationView bottomNavigationView;
-    private FragmentManager fm;
-    private FragmentTransaction ft;
-    private Home homeFrag;
-    private Profile profileFrag;
-    private Select_Interst selectInterstFrag;
-    private SplList splListFrag;
-    private ItemDetail itemDetailFrag ;
+    public BottomNavigationView bottomNavigationView;
+    public FragmentManager fm;
+    public FragmentTransaction ft;
+    public Home homeFrag;
+    public Profile profileFrag;
+    public Select_Interst selectInterstFrag;
+    public SplList splListFrag;
+    public ItemDetail itemDetailFrag ;
+    public Board boardFrag;
+    public sym2 doctorFrag;
+    public SettingOpt settingFrag;
+    public Bundle boardBundle = new Bundle();
+    public Bundle settingBundle = new Bundle();
 
+    public Mydiet mydiet;
+    public AddFood addFood;
 
-
-    private Mydiet mydiet;
-
-    private AddFood addFood;
-
-    private CalenderFragment calenderFragment;
+    public CalenderFragment calenderFragment;
     public Bundle bundle1 =  new Bundle();
     public Bundle splListbundle =  new Bundle();
     public Bundle itemDetailBundle = new Bundle();
@@ -53,13 +51,12 @@ public class MainActivity extends AppCompatActivity {
     public String userName;
     public String userGender;
     public String userEMail;
+    public String userPhone;
     public String splpCode;
-
     //해당날짜 저장
     public String date;
     public Bundle dateBundle =  new Bundle();
-    private int type;
-
+    public int type;
 
 
     @Override
@@ -74,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
         userGender = intent.getStringExtra("userGender");
         userName = intent.getStringExtra("userName");
         userEMail = intent.getStringExtra("userEMail");
+        userPhone = intent.getStringExtra("userPhone");
 
 
         homeFrag = new Home();
@@ -81,7 +79,9 @@ public class MainActivity extends AppCompatActivity {
         selectInterstFrag = new Select_Interst();
         splListFrag = new SplList();
         itemDetailFrag = new ItemDetail();
-
+        boardFrag = new Board();
+        doctorFrag = new sym2();
+        settingFrag = new SettingOpt();
 
         mydiet = new Mydiet();
         addFood =new AddFood();
@@ -105,6 +105,16 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.bottom_profile:
                         setFrag(1);
+                        break;
+                    case R.id.bottom_diet:
+                        setFrag(2);
+                        break;
+                    case R.id.bottom_deal:
+                        setFrag(3);
+                        break;
+
+                    case R.id.bottom_setting:
+                        setFrag(6);
                         break;
                 }
                 return true;
@@ -132,15 +142,18 @@ public class MainActivity extends AppCompatActivity {
 
             // 하단의 내 정보나 Home의 내 정보 클릭시
             case 1:
+                bundle1.putString("userID",userID);
                 bundle1.putString("userName",userName);
                 bundle1.putString("userGender",userGender);
                 bundle1.putString("userEMail",userEMail);
+                bundle1.putString("userPhone",userPhone);
+
 
                 profileFrag.setArguments(bundle1);
                 ft.replace(R.id.Main_Frame,profileFrag);
+                ft.addToBackStack(null);
                 ft.commit();
                 break;
-
             // 내 식단 클릭시
             case 2:
                 ft.replace(R.id.Main_Frame,calenderFragment);
@@ -150,21 +163,43 @@ public class MainActivity extends AppCompatActivity {
 
             case 39:
                 //달력 프레그먼트 제거
-                getSupportFragmentManager().popBackStack();
+                //getSupportFragmentManager().popBackStack();
                 dateBundle.putString("date",date);
                 dateBundle.putString("userID",userID);
                 mydiet.setArguments(dateBundle);
                 mydiet.initList();
                 ft.replace(R.id.Main_Frame,mydiet);
-
                 ft.addToBackStack(null);
                 ft.commit();
+                break;
 
+            //거래 클릭시
+            case 3:
+                boardBundle.putString("userId",userID);
+                boardFrag.setArguments(boardBundle);
+                ft.replace(R.id.Main_Frame,boardFrag);
+                ft.addToBackStack(null);
+                ft.commit();
                 break;
 
             // 제품 추천 클릭시
             case 4:
                 ft.replace(R.id.Main_Frame,selectInterstFrag);
+                ft.addToBackStack(null);
+                ft.commit();
+                break;
+
+                //문진 클릭시
+            case 5:
+                ft.replace(R.id.Main_Frame,doctorFrag);
+                ft.addToBackStack(null);
+                ft.commit();
+                break;
+
+            case 6:
+                settingBundle.putString("userID",userID);
+                settingFrag.setArguments(settingBundle);
+                ft.replace(R.id.Main_Frame,settingFrag);
                 ft.addToBackStack(null);
                 ft.commit();
                 break;
@@ -362,7 +397,6 @@ public class MainActivity extends AppCompatActivity {
                 ft.addToBackStack(null);
                 ft.commit();
                 break;
-
             case 40:
                 ft.replace(R.id.Main_Frame,addFood);
                 ft.addToBackStack(null);
@@ -372,12 +406,10 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
-
     //해당 날짜 선택
     public void setDate(String date) {
         this.date = date;
     }
-
 
     // 상단 툴바 뒤로가기 눌렀을 시 이벤트
    @Override
@@ -388,19 +420,18 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
 
+
         return super.onOptionsItemSelected(item);
     }
 
     public void onBackPressed(){
             if(getFragmentManager().getBackStackEntryCount() > 0){
-                getFragmentManager().popBackStack();
                 getSupportFragmentManager().popBackStack();
             }
             else{
                 super.onBackPressed();
+            }
         }
-    }
-
     //아침점심저녁 데이터선택
     public void setType(int type) {
         this.type =type;
