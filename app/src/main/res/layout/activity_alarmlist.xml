@@ -60,7 +60,9 @@
 
         <ListView android:id="@+id/list_alarm"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:addStatesFromChildren="true"
+            android:choiceMode="multipleChoice"/>
 
     </FrameLayout>
 
