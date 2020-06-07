@@ -7,18 +7,18 @@ import com.android.volley.toolbox.StringRequest;
 import java.util.HashMap;
 import java.util.Map;
 
-public class AlarmInsertRequest extends StringRequest {
+public class AlarmModifyRequest extends StringRequest {
 
-    final static String URL = "http://limiteknj.iptime.org:80/Board/alarm/setAlarmData.php";
+    final static String URL = "http://limiteknj.iptime.org:80/Board/alarm/modifyAlarmData.php";
     private Map<String, String> map;
 
-    public AlarmInsertRequest(String userID, String name, String mornStat, String mornHour, String mornMin,
-                        String lunStat, String lunHour, String lunMin, String dnrStat, String dnrHour, String dnrMin,
-                        Response.Listener<String> listener) {
+    public AlarmModifyRequest(String no, String name, String mornStat, String mornHour, String mornMin,
+                              String lunStat, String lunHour, String lunMin, String dnrStat, String dnrHour, String dnrMin,
+                              Response.Listener<String> listener) {
 
         super(Method.POST, URL, listener, null);
         map = new HashMap<>();
-        map.put("userID", userID);
+        map.put("no", no);
         map.put("name", name);
         map.put("mornStat",mornStat);
         map.put("mornHour",mornHour);

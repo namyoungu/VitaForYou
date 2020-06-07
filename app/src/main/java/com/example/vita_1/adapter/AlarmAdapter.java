@@ -64,9 +64,10 @@ public class AlarmAdapter extends BaseAdapter {
         return alarmItemList.get(position);
     }
 
-    public void addItem(String alarmName, String mornTime, String lunTime, String dnrTime){
+    public void addItem(int no, String alarmName, String mornTime, String lunTime, String dnrTime){
         AlarmItems item = new AlarmItems();
 
+        item.setAlarmNo(no);
         item.setAlarmName(alarmName);
         item.setMornAlarm(mornTime);
         item.setLunAlarm(lunTime);

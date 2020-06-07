@@ -27,7 +27,7 @@
             android:layout_gravity="fill"
             android:text="아침 : "
             android:textSize="10dp"
-            android:textColor="@color/gray"/>
+            android:textColor="@color/black"/>
 
         <TextView android:id="@+id/li_txt_lun"
             android:layout_column="1"
@@ -36,7 +36,7 @@
             android:layout_gravity="fill"
             android:text="점심 : "
             android:textSize="10dp"
-            android:textColor="@color/gray"/>
+            android:textColor="@color/black"/>
 
         <TextView android:id="@+id/li_txt_dnr"
             android:layout_column="2"
@@ -45,7 +45,7 @@
             android:layout_gravity="fill"
             android:text="저녁 : "
             android:textSize="10dp"
-            android:textColor="@color/gray"/>
+            android:textColor="@color/black"/>
     </GridLayout>
 
 </LinearLayout>

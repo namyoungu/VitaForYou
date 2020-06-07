@@ -9,16 +9,15 @@ import java.util.Map;
 
 public class AlarmDeleteRequest extends StringRequest {
 
-    final static String URL = "http://limiteknj.iptime.org/Board/alarm/dropAlarmData.php";
+    final static String URL = "http://limiteknj.iptime.org:80/Board/alarm/dropAlarmData.php";
     private Map<String, String> map;
 
-    public AlarmDeleteRequest(String userID, String name,
+    public AlarmDeleteRequest(String no,
                               Response.Listener<String> listener) {
 
         super(Method.POST, URL, listener, null);
         map = new HashMap<>();
-        map.put("userID", userID);
-        map.put("name", name);
+        map.put("no", no);
     }
 
     @Override

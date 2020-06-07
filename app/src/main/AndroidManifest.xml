@@ -3,6 +3,8 @@
     package="com.example.vita_1">
     <!-- 인터넷 접속 -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
 
     <application
         android:allowBackup="true"
@@ -21,6 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".MainActivity" />
         <activity android:name=".LoginActivity"/>
         <activity android:name=".RegisterActivity"/>
@@ -28,6 +31,10 @@
         <activity android:name=".UserModiActivity"/>
         <activity android:name=".AlarmActivity"/>
         <activity android:name=".AlarmListActivity"/>
+
+        <receiver android:name=".AlarmReceiver"/>
+        <receiver android:name=".DeviceBootReceiver" android:enabled="false"/>
+
     </application>
 
 </manifest>

@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class GetAlarmRequest extends StringRequest {
 
-    final static String URL = "http://limiteknj.iptime.org/Board/alarm/getAlarmData.php";
+    final static String URL = "http://limiteknj.iptime.org:80/Board/alarm/getAlarmData.php";
     private Map<String, String> map;
 
     public GetAlarmRequest(String name, Response.Listener<String> listener) {
